@@ -42,7 +42,6 @@ getPlayerInfo = (year) => {
         .then(function(json) {
             var unModdedPlayerArray = json.cumlativeplayerstats.playerstatsentry;
             unModdedPlayerArray.forEach(function(obj) { 
-                //playerArray.push(obj.player.FirstName + " " + obj.player.LastName); 
                 playerArray.push(obj)
             });
             showPlayers(playerArray);
@@ -70,7 +69,7 @@ showPlayers = (arr) => {
         var weightRow = document.createElement('td');
 
         //Add Data to Node
-        var name = document.createTextNode(playerObject.FirstName + " " + playerObject.LastName)
+        var name = document.createTextNode(playerObject.LastName + ", " + playerObject.FirstName)
         var position = document.createTextNode(playerObject.Position);
         var number = document.createTextNode(playerObject.JerseyNumber);
         var height = document.createTextNode(playerObject.Height);
